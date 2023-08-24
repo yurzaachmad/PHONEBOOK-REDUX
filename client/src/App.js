@@ -53,7 +53,6 @@ function Layout({
   sortTypes,
   currenSort,
   onSortChange,
-  onClick,
   setPlus,
   plus,
 }) {
@@ -63,7 +62,6 @@ function Layout({
     <div>
       {plus ? null : (
         <SearchContact
-          onClick={onClick}
           q={q}
           setQ={setQ}
           onSortChange={onSortChange}
@@ -84,12 +82,9 @@ function NotFound() {
 
 function App() {
   const [q, setQ] = useState("");
-  const [user, setUser] = useState({ name: "", phone: "" });
 
   // this code is for showing form to add contact
   const [plus, setPlus] = useState(false);
-  const onClick = () => setPlus(true);
-  const clik = () => setPlus(false);
 
   const [searchParam] = useState(["name", "phone"]);
 
@@ -128,7 +123,6 @@ function App() {
               sortTypes={sortTypes}
               currenSort={currenSort}
               onSortChange={onSortChange}
-              onClick={onClick}
               setPlus={setPlus}
               plus={plus}
             />
@@ -147,17 +141,7 @@ function App() {
             }
           />
           <Route path="*" element={<NotFound />} />
-          <Route
-            path="add"
-            element={
-              <ContactAdd
-                user={user}
-                setUser={setUser}
-                clik={clik}
-                setPlus={setPlus}
-              />
-            }
-          />
+          <Route path="add" element={<ContactAdd setPlus={setPlus} />} />
         </Route>
       </Routes>
     </Router>

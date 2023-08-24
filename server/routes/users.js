@@ -2,7 +2,6 @@ var express = require("express");
 var router = express.Router();
 var models = require("../models");
 var path = require("path");
-const { log } = require("console");
 
 /* GET users listing. */
 router.get("/", async function (req, res, next) {

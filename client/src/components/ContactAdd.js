@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { addContact } from "../actions/users";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 
-export default function ContactAdd({ user, setUser, setPlus }) {
+export default function ContactAdd({ setPlus }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [user, setUser] = useState({ name: "", phone: "" });
 
   const submit = (event) => {
     event.preventDefault();

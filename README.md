@@ -1,3 +1,7 @@
+#OVERVIEW
+
+- Phonebook thats i create is an app that will show list contacts and have more function such as create a contact, update contact, delete contact, update avatar, search and feature like sort asc and desc
+
 #BACK-END
 
 - Using ORM
